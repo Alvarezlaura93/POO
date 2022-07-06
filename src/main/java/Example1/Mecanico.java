@@ -1,6 +1,7 @@
 package Example1;
 
 import Example1.BasedeDatos.Conexion;
+import Example1.BasedeDatos.ConsultasDb;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,13 +11,11 @@ public class Mecanico extends Persona {
     private List<Curso> cursosRealizado= new ArrayList<>();
     public Mecanico(String nombre, String apellido, String profesion, int dni) {
         super(nombre, apellido, profesion, dni);
-        Curso curso1 = new LimpizaInyectoresImpl(123);
-        Curso curso2 = new CursoReparaciondeBombaImpl(1255);
-        curso1.setNombre("bienvenida");
-        cursosRealizado.add(curso1);
-        cursosRealizado.add(curso2);
-        Conexion.connect();
+
+
+       cursosRealizado=ConsultasDb.selectAll();
     }
+
 
     public List<Curso> getCursosRealizado() {
         return cursosRealizado;

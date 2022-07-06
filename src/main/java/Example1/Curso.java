@@ -2,7 +2,7 @@ package Example1;
 
 
 public class Curso {
-    private int cantidadHoras;
+    private double cantidadHoras;
     private String nombre;
 
     public String getNombre() {
@@ -13,15 +13,20 @@ public class Curso {
         this.nombre = nombre;
     }
 
-    public Curso(int cantidadHoras) {
+    public Curso(String nombre, double cantidadHoras) {
+        this.nombre = nombre;
         this.cantidadHoras = cantidadHoras;
     }
 
-    public int getCantidadHoras() {
+    public Curso(double cantidadHoras) {
+        this.cantidadHoras = cantidadHoras;
+    }
+
+    public double getCantidadHoras() {
         return cantidadHoras;
     }
 
-    public void setCantidadHoras(int cantidadHoras) {
+    public void setCantidadHoras(double cantidadHoras) {
         this.cantidadHoras = cantidadHoras;
     }
 
